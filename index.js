@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 // 全データの取得
-app.get("/", async (_, res) => {
+app.get("/books", async (_, res) => {
   try {
     const AllBooks = await prisma.book.findMany();
     res.json(AllBooks);
