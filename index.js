@@ -27,9 +27,9 @@ app.get("/books", async (_, res) => {
 
 // 本データの作成
 app.post("/books", async(req, res) => {
-  console.log(req.body)
   try {
     const book = await prisma.book.create({ data: req.body})
+    res.json(book)
   } catch(error) {
     res.status(500).send("データの保存に失敗しました");
   }
