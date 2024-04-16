@@ -17,6 +17,5 @@ model Book {
   id        Int       @id @default(autoincrement())
   title     String 
   review    String
-  uid       String
   createdAt DateTime  @default(now())
 }
